@@ -3,7 +3,7 @@
 TokenRepositoryInterface
   save(token:string):void
   get():string
-  remove():void 
+  delete():void 
  */
 
 // 구체
@@ -19,7 +19,7 @@ class LocalTokenRepository {
     return localStorage.get(this.#TOKEN_KEY);
   }
 
-  remove() {
+  delete() {
     localStorage.removeItem(this.#TOKEN_KEY);
   }
 }
