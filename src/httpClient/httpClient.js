@@ -9,20 +9,21 @@
 
 //추상
 // interface
-// fetch(url, options):Response 객체를 Promise 형태로 리턴해줌
+// fetch(endPoint, options):Response 객체를 Promise 형태로 리턴해줌
 
-//구현
+//구체
 class HttpClient {
-  constructor(base_url) {
+  constructor(base_url, tokenRepository) {
     this.base_url = base_url;
+    this.tokenRepository = tokenRepository;
   }
   //method
-  fetch(endPoint, options) {
+  fetch(endPoint, options = {}) {
     return window.fetch(`${this.base_url}${endPoint}`, {
       ...options,
       headers: {
+        Authorization: this.tokenRepository.get(),
         ...options.headers,
-        Authorization: "ACCESS_TOKEN",
       },
     });
   }
