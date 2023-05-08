@@ -14,10 +14,10 @@ export class AuthService {
     // 1. api call
     const response = await this.httpClient.fetch("auth/signin", {
       method: "POST",
-      body: {
+      body: JSON.stringify({
         email,
         password,
-      },
+      }),
     });
 
     const { access_token } = response.json();
@@ -29,10 +29,10 @@ export class AuthService {
   signup(email, password) {
     return this.httpClient.fetch("auth/signup", {
       method: "POST",
-      body: {
+      body: JSON.stringify({
         email,
         password,
-      },
+      }),
     });
   }
 
