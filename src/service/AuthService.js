@@ -1,12 +1,10 @@
 // 추상
-
 // signin(email, password):Promise<Response>
 // signup(email, password):Promise<Response>
 // logout(): void
 
 // 구현
-
-class AuthService {
+export class AuthService {
   constructor(httpClient, tokenRepository) {
     this.httpClient = httpClient;
     this.tokenRepository = tokenRepository;

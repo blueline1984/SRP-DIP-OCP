@@ -12,7 +12,7 @@
 // fetch(endPoint, options):Response 객체를 Promise 형태로 리턴해줌
 
 //구체
-class HttpClient {
+export class HttpClient {
   constructor(base_url, tokenRepository) {
     this.base_url = base_url;
     this.tokenRepository = tokenRepository;
@@ -29,8 +29,3 @@ class HttpClient {
     });
   }
 }
-
-const httpClient = new HttpClient("https://jsonplaceholder.typicode.com/");
-const localClient = new HttpClient("https://localhost:8000/");
-
-export { httpClient, localClient };

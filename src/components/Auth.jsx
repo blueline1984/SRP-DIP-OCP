@@ -16,9 +16,15 @@ function Auth() {
     }));
   };
 
-  const signin = () => {};
-  const signup = () => {};
-  const logout = () => {};
+  const signin = () => {
+    AuthService.signin(email, password);
+  };
+  const signup = () => {
+    AuthService.signup(email, password);
+  };
+  const logout = () => {
+    AuthService.logout();
+  };
 
   return (
     <form onSubmit={(e) => e.preventDefault()}>

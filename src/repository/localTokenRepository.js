@@ -8,7 +8,7 @@ TokenRepositoryInterface
 
 // 구체
 
-class LocalTokenRepository {
+export class LocalTokenRepository {
   #TOKEN_KEY = "ACCECC_TOKEN";
 
   save(token) {

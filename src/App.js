@@ -10,7 +10,6 @@ function App() {
   };
   return (
     <>
-      <button onClick={request}>click</button>
       <Auth />
       <br />
       <Todos />
